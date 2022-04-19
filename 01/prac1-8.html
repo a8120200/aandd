@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            createRandomNumbers(numbers, 20);
+            //prac1-8 N個の乱数を挿入する関数を作る
+            //関数名：createRandomNumbers(array, n)
+            //できたら，関数定義をaandd.jsに移す
+            show(numbers);
+        }
+        function createRandomNumbers(array, n) {
+            for (var i = 0; i < n; i++) {
+                array.push(Math.floor(Math.random() * 100));
+            }
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>prac1-8</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
