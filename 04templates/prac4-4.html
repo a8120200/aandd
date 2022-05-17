@@ -35,7 +35,7 @@
             var upper = numbers.length;
             var lower = 0;
             var mid = Math.floor((upper + lower) / 2);
-            while (lower < mid) { // for (,,) {}でもOK
+            while (true) { // for (,,) {}でもOK
                 if (a < numbers[mid]) {
                     upper = mid;
                     mid = Math.floor((upper + lower) / 2);
@@ -53,6 +53,7 @@
                 if (lower == mid) {
                     console.log(mid);
                     show("見つかりませんでした。");
+                    break;
                 }
             }
         }
