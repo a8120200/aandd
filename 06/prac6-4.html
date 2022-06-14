@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script type="text/javascript" src="nouns.js"></script>
+    <script type="text/javascript" src="verbs.js"></script>
+
+    <script>
+
+        var nouns;
+        var verbs;
+
+        $(document).ready(function () {
+            nouns = nounstext.split('\n');
+        });
+
+        $(document).ready(function () {
+            verbs = verbstext.split('\n');
+        });
+
+        function runButtonPressed() {
+            for (; ;) {
+                var noun = selectone(nouns);
+                var verb = selectone(verbs);
+                var a = noun + verb;
+                var chars = a.split('');
+                console.log(a)
+                var text2 = [];
+                for (var i = 0; i < a.length; i++) {
+                    text2.push(chars.pop(""));
+                    var text3 = text2.join("");
+                }
+                // show(text3);
+
+                if (noun == text3) {
+                    show('回文です')
+                    show(a);
+                    break
+                }
+            }
+        }
+
+        function selectone(array) {
+            var size = array.length;
+            var index = Math.floor(Math.random() * size);
+            return array[index];
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>6-4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+
+</body>
+
+</html>
